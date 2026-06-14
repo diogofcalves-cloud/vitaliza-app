@@ -1,0 +1,80 @@
+{
+  "modelo_vencedor": "Random Forest",
+  "features": [
+    "gender",
+    "Near_Location",
+    "Partner",
+    "Promo_friends",
+    "Phone",
+    "Contract_period",
+    "Group_visits",
+    "Age",
+    "Avg_additional_charges_total",
+    "Month_to_end_contract",
+    "Lifetime",
+    "Avg_class_frequency_total",
+    "Avg_class_frequency_current_month",
+    "Delta_freq",
+    "is_sleeping_dog",
+    "freq_ratio"
+  ],
+  "metricas_comparativas": {
+    "Regressao Logistica": {
+      "AUC_test": 0.9204956240487062,
+      "AUC_cv_mean": 0.9191698738987097,
+      "AUC_cv_std": 0.01322913640359188,
+      "Precision": 0.6617647058823529,
+      "Recall": 0.8333333333333334,
+      "F1": 0.7377049180327869,
+      "Accuracy": 0.84
+    },
+    "Random Forest": {
+      "AUC_test": 0.945459157787925,
+      "AUC_cv_mean": 0.9408062912924112,
+      "AUC_cv_std": 0.01045392642896358,
+      "Precision": 0.813953488372093,
+      "Recall": 0.8101851851851852,
+      "F1": 0.8120649651972158,
+      "Accuracy": 0.89875
+    },
+    "XGBoost": {
+      "AUC_test": 0.9399575088787417,
+      "AUC_cv_mean": 0.9319155677681863,
+      "AUC_cv_std": 0.009032362910574862,
+      "Precision": 0.762114537444934,
+      "Recall": 0.8009259259259259,
+      "F1": 0.781038374717833,
+      "Accuracy": 0.87875
+    }
+  },
+  "usa_scaler": false,
+  "tamanho_treino": 3200,
+  "tamanho_teste": 800,
+  "churn_rate_treino": 0.27,
+  "distribuicao_risco": {
+    "1. Baixo": {
+      "n": 2414,
+      "pct_base": 60.4,
+      "churn_real": 0.006,
+      "score_medio": 0.039
+    },
+    "2. Medio": {
+      "n": 323,
+      "pct_base": 8.1,
+      "churn_real": 0.053,
+      "score_medio": 0.289
+    },
+    "3. Alto": {
+      "n": 366,
+      "pct_base": 9.2,
+      "churn_real": 0.538,
+      "score_medio": 0.559
+    },
+    "4. Critico": {
+      "n": 897,
+      "pct_base": 22.4,
+      "churn_real": 0.949,
+      "score_medio": 0.909
+    }
+  }
+}
