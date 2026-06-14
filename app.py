@@ -17,6 +17,14 @@ import streamlit as st
 from churn_predictor import ChurnPredictor, classificar_faixa, cor_faixa, FEATURE_LABELS
 from gemini_client import GeminiClient
 
+import os
+# Carrega API key do Streamlit Secrets se disponível (sobrescreve env var)
+try:
+    if 'GOOGLE_AI_API_KEY' in st.secrets:
+        os.environ['GOOGLE_AI_API_KEY'] = st.secrets['GOOGLE_AI_API_KEY']
+except (FileNotFoundError, KeyError):
+    pass  # rodando local sem secrets.toml, segue com env var normal
+
 # ============================================================
 # CONFIGURACAO DA PAGINA
 # ============================================================
